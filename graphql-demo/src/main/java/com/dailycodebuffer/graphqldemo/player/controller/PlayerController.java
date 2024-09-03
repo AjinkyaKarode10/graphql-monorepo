@@ -1,7 +1,7 @@
 package com.dailycodebuffer.graphqldemo.player.controller;
 
-import com.dailycodebuffer.graphqldemo.player.command.PlayerCommandImpl;
-import com.dailycodebuffer.graphqldemo.player.query.PlayerQueryImpl;
+import com.dailycodebuffer.graphqldemo.player.command_query.PlayerCommandImpl;
+import com.dailycodebuffer.graphqldemo.player.command_query.PlayerQueryImpl;
 import com.dailycodebuffer.graphqldemo.player.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
 import com.dailycodebuffer.graphqldemo.player.resolver.PlayerSubscriptionResolver;

@@ -1,4 +1,4 @@
-package com.dailycodebuffer.graphqldemo.player.command;
+package com.dailycodebuffer.graphqldemo.player.command_query;
 
 import com.dailycodebuffer.graphqldemo.player.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
