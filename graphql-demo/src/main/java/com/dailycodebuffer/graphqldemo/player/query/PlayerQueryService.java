@@ -1,6 +1,6 @@
-package com.dailycodebuffer.graphqldemo.query;
+package com.dailycodebuffer.graphqldemo.player.query;
 
-import com.dailycodebuffer.graphqldemo.model.Player;
+import com.dailycodebuffer.graphqldemo.player.model.Player;
 
 import java.util.List;
 

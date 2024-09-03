@@ -1,8 +1,9 @@
-package com.dailycodebuffer.graphqldemo.resolver;
+package com.dailycodebuffer.graphqldemo.player.resolver;
 
-import com.dailycodebuffer.graphqldemo.model.Player;
+import com.dailycodebuffer.graphqldemo.player.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
-import com.dailycodebuffer.graphqldemo.repository.PlayerRepository;
+import com.dailycodebuffer.graphqldemo.player.repository.PlayerRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Sinks;
@@ -43,4 +44,16 @@ public class PlayerMutationResolver {
         }
         return updatedPlayerRecord;
     }
+
+    @PostConstruct
+    private void init() {
+        if (playerRepository.count() == 0) {
+            playerRepository.save((new Player("100", "MS Dhoni", Team.CSK)));
+            playerRepository.save((new Player("101", "Rohit Sharma", Team.MI)));
+            playerRepository.save((new Player("102", "Jasprit Bumrah", Team.MI)));
+            playerRepository.save((new Player("103", "Rishabh pant", Team.DC)));
+            playerRepository.save((new Player("104", "Suresh Raina", Team.CSK)));
+        }
+    }
+
 }

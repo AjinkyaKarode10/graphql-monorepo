@@ -25,5 +25,5 @@ type Mutation {
 
 type Subscription {
     playerCreated: Player
-    playerUpdated: Player
+    #playerUpdated: Player
 }

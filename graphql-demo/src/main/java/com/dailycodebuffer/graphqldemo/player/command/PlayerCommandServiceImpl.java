@@ -1,8 +1,8 @@
-package com.dailycodebuffer.graphqldemo.command;
+package com.dailycodebuffer.graphqldemo.player.command;
 
-import com.dailycodebuffer.graphqldemo.model.Player;
+import com.dailycodebuffer.graphqldemo.player.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
-import com.dailycodebuffer.graphqldemo.resolver.PlayerMutationResolver;
+import com.dailycodebuffer.graphqldemo.player.resolver.PlayerMutationResolver;
 import org.springframework.stereotype.Component;
 
 @Component

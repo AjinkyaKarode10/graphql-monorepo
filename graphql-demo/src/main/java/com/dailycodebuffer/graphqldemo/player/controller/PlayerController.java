@@ -1,10 +1,10 @@
-package com.dailycodebuffer.graphqldemo.controller;
+package com.dailycodebuffer.graphqldemo.player.controller;
 
-import com.dailycodebuffer.graphqldemo.command.PlayerCommandServiceImpl;
-import com.dailycodebuffer.graphqldemo.query.PlayerQueryServiceImpl;
-import com.dailycodebuffer.graphqldemo.model.Player;
+import com.dailycodebuffer.graphqldemo.player.command.PlayerCommandServiceImpl;
+import com.dailycodebuffer.graphqldemo.player.query.PlayerQueryServiceImpl;
+import com.dailycodebuffer.graphqldemo.player.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
-import com.dailycodebuffer.graphqldemo.resolver.PlayerSubscriptionResolver;
+import com.dailycodebuffer.graphqldemo.player.resolver.PlayerSubscriptionResolver;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;

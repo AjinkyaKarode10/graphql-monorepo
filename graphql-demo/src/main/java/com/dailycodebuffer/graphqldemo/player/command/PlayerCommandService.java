@@ -1,6 +1,6 @@
-package com.dailycodebuffer.graphqldemo.command;
+package com.dailycodebuffer.graphqldemo.player.command;
 
-import com.dailycodebuffer.graphqldemo.model.Player;
+import com.dailycodebuffer.graphqldemo.player.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
 
 public interface PlayerCommandService {

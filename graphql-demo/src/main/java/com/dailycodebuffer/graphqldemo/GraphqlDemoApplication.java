@@ -10,4 +10,5 @@ public class GraphqlDemoApplication {
 		SpringApplication.run(GraphqlDemoApplication.class, args);
 	}
 
+
 }

@@ -1,5 +1,6 @@
-package com.dailycodebuffer.graphqldemo.model;
+package com.dailycodebuffer.graphqldemo.player.model;
 
+import com.dailycodebuffer.graphqldemo.model.Team;
 import org.springframework.data.annotation.Id;
 
 public class Player {
