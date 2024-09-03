@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class PlayerQueryServiceImpl implements PlayerQueryService {
+public class PlayerQueryImpl implements PlayerQuery {
 
     private final PlayerQueryResolver playerQueryResolver;
 
-    public PlayerQueryServiceImpl(PlayerQueryResolver playerQueryResolver) {
+    public PlayerQueryImpl(PlayerQueryResolver playerQueryResolver) {
         this.playerQueryResolver = playerQueryResolver;
     }
 

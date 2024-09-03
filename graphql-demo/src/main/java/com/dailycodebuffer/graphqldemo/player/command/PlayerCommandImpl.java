@@ -6,11 +6,11 @@ import com.dailycodebuffer.graphqldemo.player.resolver.PlayerMutationResolver;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PlayerCommandServiceImpl implements PlayerCommandService {
+public class PlayerCommandImpl implements PlayerCommand {
 
     private final PlayerMutationResolver playerMutationResolver;
 
-    public PlayerCommandServiceImpl(PlayerMutationResolver playerMutationResolver) {
+    public PlayerCommandImpl(PlayerMutationResolver playerMutationResolver) {
         this.playerMutationResolver = playerMutationResolver;
     }
 

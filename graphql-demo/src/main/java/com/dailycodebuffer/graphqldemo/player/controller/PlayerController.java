@@ -1,7 +1,7 @@
 package com.dailycodebuffer.graphqldemo.player.controller;
 
-import com.dailycodebuffer.graphqldemo.player.command.PlayerCommandServiceImpl;
-import com.dailycodebuffer.graphqldemo.player.query.PlayerQueryServiceImpl;
+import com.dailycodebuffer.graphqldemo.player.command.PlayerCommandImpl;
+import com.dailycodebuffer.graphqldemo.player.query.PlayerQueryImpl;
 import com.dailycodebuffer.graphqldemo.player.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
 import com.dailycodebuffer.graphqldemo.player.resolver.PlayerSubscriptionResolver;
@@ -23,11 +23,11 @@ public class PlayerController {
 //        this.playerService = playerService;
 //    }
 
-    private final PlayerCommandServiceImpl playerCommandServiceImpl;
-    private final PlayerQueryServiceImpl playerQueryServiceImpl;
+    private final PlayerCommandImpl playerCommandServiceImpl;
+    private final PlayerQueryImpl playerQueryServiceImpl;
     private final PlayerSubscriptionResolver playerSubscriptionResolver;
 
-    public PlayerController(PlayerCommandServiceImpl playerCommandServiceImpl, PlayerQueryServiceImpl playerQueryServiceImpl,PlayerSubscriptionResolver playerSubscriptionResolver) {
+    public PlayerController(PlayerCommandImpl playerCommandServiceImpl, PlayerQueryImpl playerQueryServiceImpl, PlayerSubscriptionResolver playerSubscriptionResolver) {
         this.playerCommandServiceImpl = playerCommandServiceImpl;
         this.playerQueryServiceImpl = playerQueryServiceImpl;
         this.playerSubscriptionResolver=playerSubscriptionResolver;
