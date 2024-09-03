@@ -4,10 +4,13 @@ import com.dailycodebuffer.graphqldemo.command.PlayerCommandServiceImpl;
 import com.dailycodebuffer.graphqldemo.query.PlayerQueryServiceImpl;
 import com.dailycodebuffer.graphqldemo.model.Player;
 import com.dailycodebuffer.graphqldemo.model.Team;
+import com.dailycodebuffer.graphqldemo.resolver.PlayerSubscriptionResolver;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.graphql.data.method.annotation.SubscriptionMapping;
 import org.springframework.stereotype.Controller;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -22,10 +25,12 @@ public class PlayerController {
 
     private final PlayerCommandServiceImpl playerCommandServiceImpl;
     private final PlayerQueryServiceImpl playerQueryServiceImpl;
+    private final PlayerSubscriptionResolver playerSubscriptionResolver;
 
-    public PlayerController(PlayerCommandServiceImpl playerCommandServiceImpl, PlayerQueryServiceImpl playerQueryServiceImpl) {
+    public PlayerController(PlayerCommandServiceImpl playerCommandServiceImpl, PlayerQueryServiceImpl playerQueryServiceImpl,PlayerSubscriptionResolver playerSubscriptionResolver) {
         this.playerCommandServiceImpl = playerCommandServiceImpl;
         this.playerQueryServiceImpl = playerQueryServiceImpl;
+        this.playerSubscriptionResolver=playerSubscriptionResolver;
     }
 
     @QueryMapping
@@ -52,4 +57,9 @@ public class PlayerController {
 //    public Player delete(@Argument Integer id) {
 //        return playerService.delete(id);
 //    }
+
+    @SubscriptionMapping
+    public Flux<Player> playerCreated() {
+        return playerSubscriptionResolver.playerCreated();
+    }
 }
