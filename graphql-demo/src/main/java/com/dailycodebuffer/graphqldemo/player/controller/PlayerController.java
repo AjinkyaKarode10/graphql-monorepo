@@ -11,8 +11,7 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SubscriptionMapping;
 import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Flux;
-
-import java.util.List;
+import reactor.core.publisher.Mono;
 
 @Controller
 public class PlayerController {
@@ -34,23 +33,23 @@ public class PlayerController {
     }
 
     @QueryMapping
-    public List<Player> findAll() {
-        return playerQueryServiceImpl.findAllPLayers();
+    public Flux<Player> findAll() {
+        return Flux.fromIterable(playerQueryServiceImpl.findAllPLayers());
     }
 
     @QueryMapping
-    public Player findOne(@Argument String playerId) {
-        return playerQueryServiceImpl.findByPlayerId(playerId);
+    public Mono<Player> findOne(@Argument String playerId) {
+        return Mono.just(playerQueryServiceImpl.findByPlayerId(playerId));
     }
 
     @MutationMapping
-    public Player create(@Argument String playerId, @Argument String name, @Argument Team team) {
-        return playerCommandServiceImpl.createPlayer(playerId,name,team);
+    public Mono<Player> create(@Argument String playerId, @Argument String name, @Argument Team team) {
+        return Mono.just(playerCommandServiceImpl.createPlayer(playerId,name,team));
     }
 
     @MutationMapping
-    public Player update(@Argument String playerId, @Argument String name, @Argument Team team) {
-        return playerCommandServiceImpl.updatePlayer(playerId,name,team);
+    public Mono<Player> update(@Argument String playerId, @Argument String name, @Argument Team team) {
+        return Mono.just(playerCommandServiceImpl.updatePlayer(playerId,name,team));
     }
 
 //    @MutationMapping
